@@ -298,6 +298,7 @@ td {
     color: transparent;
     background-image: linear-gradient(100deg, #d6dedf, #c0c9ca, #d6dedf, white);
     background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .tile textarea {
