@@ -10,6 +10,8 @@ Functionality includes buttons to generate bingo cards or fill out and edit your
  - minor cosmetic improvements
  - eventual links to a main site and other projects
  - easier functionality to edit a randomly generated board  
+ - JS & CSS optimization, and maybe more thorough commenting on the HTML & CSS
+ - SEO optimization
 **Noticed a bug, or have a suggestion? Message me at [AnAceValkyrie](https://twitter.com/AnAceValkyrie).** I'm always looking for more bingo tile ideas.
 
 ## This project was made to help promote the Kingdom Hearts Union Cross Fan:Dub
