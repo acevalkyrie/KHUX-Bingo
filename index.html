@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>KHUX Bingo</title>
+        <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
+        <meta name="description" content="Play bingo for some laughs as you finally watch the Kingdom Hearts Union χ unofficial fan dub! Great for streamers and watch parties." />
+        <meta name="keywords" content="Kingdom Hearts Union χ Bingo, KHUX Bingo, KHUX Fandub Bingo, Kingdom Hearts Union Cross Bingo, Kingdom Hearts Union Cross Fandub Bingo, KHUX Unofficial Fandub Bingo" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=5.0, minimum-scale=0.86" />
+        <link rel="stylesheet" type="text/css" href="css/bingo.css" />
+        <link rel="stylesheet" type="text/css" href="css/light.css" id="lightordark">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+        <script defer type="text/javascript" src="js/bingo.js"></script>
+        <script defer src="js/darkmode.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <header>
+            <h1>Kingdom Hearts&nbsp; <span>Union <span>χ</span> Bingo</span></h1>
+            <div class="lightdark">
+                <button type="button" id="themetoggle"><span id="togglesymbol" class="bi-moon-stars-fill" aria-label="dark mode toggle"></span></button><span id="lightdarktext">light mode
+                /<br />dark mode</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="side">
+                <strong id="mobdisc">***if you're on mobile, this site is best viewed in landscape mode***</strong>
+                <p>
+                    For adding some spice and engagement to your KHUX watchthrough!<br>
+                    Looking for a place to watch? <a href="https://youtu.be/HRUt8q2IwR4">Find the definitive KHUX Fan:Dub experience here</a>.
+                </p>
+                <div id="opts">
+                    <form id="spoilform">
+                        <input type="checkbox" name="spoils" id="spoils"><label for="spoils">Include spoilers</label>
+                    </form>
+                    <form id="customform">
+                        <input type="checkbox" name="custom" id="custom"><label for="custom">Use custom predictions</label>
+                    </form>
+                </div>
+                <div id="btns">
+                    <button type="button" id="unchainedchi" class="glow-effect">
+                        Part I: Kingdom Hearts χ
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+
+                    <button type="button" id="unioncross" class="disabled">
+                        Part II: Kingdom Hearts Union χ
+                    </button>
+
+                    <button type="button" id="confirmboard" class="glow-effect hidden">
+                        Confirm Custom Board
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+
+                    <button type="button" id="editboard" class="glow-effect disabled hidden">
+                        Edit Custom Board
+                        <svg class="glow-container hidden">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+                </div>
+                <p>
+                    Create or randomly generate a bingo board of silly events you'll bump into when watching the events
+                    of Kingdom Hearts: Union χ. Made with streamers in mind, the board's meant to provide an added layer
+                    of fun and games for watch parties.
+                </p>
+                <p>
+                    Save your bingo card progress below, so you can continue your game even if you have to break up your
+                    watchthrough!
+                </p>
+                <div id="btns">
+                    <button type="button" id="save1" class="glow-effect">
+                        Save to Slot 1
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+
+                    <button type="button" id="save2" class="glow-effect">
+                        Save to Slot 2
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+
+                    <div id="divider"></div>
+                    <button type="button" id="load1" class="glow-effect">
+                        Load 1st Slot
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+
+                    <button type="button" id="load2" class="glow-effect">
+                        Load 2nd Slot
+                        <svg class="glow-container">
+                            <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+                            <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <table id="bingoboard">
+                <tr><th></th><th>B</th><th>I</th><th>N</th><th>G</th><th>O</th></tr>
+                <tr>
+                    <th>1</th>
+                    <td class="tile unmarked" id="b1"></td>
+                    <td class="tile unmarked" id="i1"></td>
+                    <td class="tile unmarked" id="n1"></td>
+                    <td class="tile unmarked" id="g1"></td>
+                    <td class="tile unmarked" id="o1"></td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td class="tile unmarked" id="b2"></td>
+                    <td class="tile unmarked" id="i2"></td>
+                    <td class="tile unmarked" id="n2"></td>
+                    <td class="tile unmarked" id="g2"></td>
+                    <td class="tile unmarked" id="o2"></td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td class="tile unmarked" id="b3"></td>
+                    <td class="tile unmarked" id="i3"></td>
+                    <td class="tile marked" id="freespace"><div class='tdpadding'><span>FREE SPACE</span></div><div class="ripplecircle"></div></td>
+                    <td class="tile unmarked" id="g3"></td>
+                    <td class="tile unmarked" id="o3"></td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td class="tile unmarked" id="b4"></td>
+                    <td class="tile unmarked" id="i4"></td>
+                    <td class="tile unmarked" id="n4"></td>
+                    <td class="tile unmarked" id="g4"></td>
+                    <td class="tile unmarked" id="o4"></td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td class="tile unmarked" id="b5"></td>
+                    <td class="tile unmarked" id="i5"></td>
+                    <td class="tile unmarked" id="n5"></td>
+                    <td class="tile unmarked" id="g5"></td>
+                    <td class="tile unmarked" id="o5"></td>
+                </tr>
+            </table>
+        </main>
+
+        <footer>
+            © 2023. v.0.0. <address>Made by <a href="https://github.com/acevalkyrie">AceValkyrie</a>.</address><br>Feel free to use/reference my code for your
+            own fan projects, but I'd appreciate if you credit me somewhere on your page. A simple "Inspired by
+            AceValkyrie's KHUX Bingo" placed anywhere visible on the page will do.
+            <p>This site uses local storage on your computer to save your bingo cards and dark mode preferences, but
+            it does not use any form of cookies.</p>
+        </footer>
+
+    </body>
+</html>

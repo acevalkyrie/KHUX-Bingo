@@ -1,0 +1,35 @@
+body {
+    background-color: #66d6ff;
+    background-image: url("../media/brushedalum.png");
+}
+
+h1 { color: white; }
+
+#themetoggle, #smallthemetoggle {
+    background-color: #37383a;
+    color: #bfbfbf;
+}
+
+main, footer { background-color: #f2fcff; }
+
+th, td { border: 1px solid #0a2f43; }
+
+div.biglink:hover {
+    background-color: hsl(194, 100%, 94%);
+}
+
+/**** advanced appearance (desktop and higher resolutions) ****/
+
+@media screen and (min-width: 896px) {
+
+}
+
+/**** highest resolution appearance ****/
+
+@media screen and (min-width: 1500px) {
+    
+    #carouselcontainer {
+        background-color: #f2fcff;
+    }
+
+}

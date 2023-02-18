@@ -1,0 +1,30 @@
+body {
+    background-color: #37383a;
+    background-image: url('../media/carbonfiber.png');
+}
+
+h1 { color: hsl(0, 100%, 5%); }
+
+#themetoggle, #smallthemetoggle {
+    background-color: #f2fcff;
+    color: #000000;
+}
+
+main, footer {
+    background-color: #042334;
+    color: #98bfcd;
+}
+
+th, td { border: 1px solid #f2fcff; }
+
+#carouselcontainer {
+    background-color: #0a2f43;
+}
+
+.card {
+    background-color: #00000080;
+}
+
+div.biglink:hover {
+    background-color: #00171fdf;
+}

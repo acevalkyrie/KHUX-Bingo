@@ -1,0 +1,460 @@
+@font-face {
+    font-family: 'KHTitle';
+    src: url('../fonts/KHTitle.otf');
+}
+
+@font-face {
+    font-family: 'Airpena';
+    src: url('../fonts/AXR\ AirpenaFreeVersion.ttf');
+}
+
+@font-face {
+    font-family: 'Fenton Ff';
+    src: url('../fonts/Fenton-Black.otf');
+}
+
+@font-face {
+    font-family: 'KHMenu';
+    src: url('../fonts/KHMenu.otf');
+}
+
+@font-face {
+    font-family: 'KHData';
+    src: url('../fonts/KHData.otf');
+}
+
+/* saving hex #7dcbe8 somewhere because i want it */
+
+html, * {
+    scrollbar-width: thin;
+    scrollbar-color: #044793 transparent;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #044793;
+}
+
+body {
+    margin: 0px;
+    padding-bottom: 10vh;
+    font-size: 16px;
+    transition: background-color 0.66s;
+}
+
+a {
+    color: #c74f05;
+    transition: color 0.33s;
+}
+
+a:hover {
+    color: #f1a604;
+}
+
+address {
+    display: inline;
+}
+
+header {
+    width: 100%;
+    padding: 1vh 2vw 0.33vh 2vw;
+    background-color: #044793;
+    background: linear-gradient(178deg, #020024 0%, #044793 40%, #1961b3 60%, #79a3d2 100%);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0px;
+    font-family: 'Airpena';
+    font-size: 2rem;
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 2px 2px 3px #a1a1a1;
+    transition: color .66s;
+}
+
+h1 span {
+    text-shadow: 1px 1px 1px #545454, -0.15rem 0 1.5rem #3ff3cf, 0.15rem 0 1.5rem #1ff4cd, 0 0 0.5rem #09ecc2, -1px -1px 1px #545454;
+}
+
+.lightdark {
+    position: absolute;
+    top: 0.33rem;
+    right: 4px;
+    width: 47px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.75;
+    letter-spacing: -0.5px;
+}
+    
+#themetoggle {
+    float: left;
+    margin-right: 4px;
+    height: 2.25rem;
+    width: 2.25rem;
+    border: 2px outset #bfbfbf;
+    border-radius: 40%;
+    transition: background-color .66s, color .66s;
+}
+
+#lightdarktext {
+    display: none;
+}
+
+main {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1.5vh 1vw 0 1vw;
+    padding: 0.33rem 0.44rem;
+    border-radius: 1rem;
+    transition: background-color .66s, color .66s;
+}
+
+footer {
+    margin: 1.5vh 1vw 0 1vw;
+    padding: 0.33rem 0.44rem;
+    border-radius: 1rem;
+    transition: background-color .66s, color .66s;
+}
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    filter: grayscale(66%) opacity(66%);
+}
+
+#mobdisc {
+    display: block;
+    text-align: center;
+    color: #a20906;
+}
+
+#btns, #opts {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 12px;
+}
+
+#btns button {
+    width: 156px;
+    min-height: 40px;
+    padding: 4px 2px;
+    background-color: hsl(199, 58%, 56%);
+    font-family: 'KHMenu';
+    border: 3px outset hsl(199, 76%, 38%);
+    box-sizing: border-box;
+    transition: background-color 0.33s;
+}
+
+#btns button:hover {
+    background-color: hsl(199, 46%, 68%);
+}
+
+#btns button:active {
+    background-color: hsl(199, 66%, 32%);
+}
+
+.glow-effect {
+    --container-offset: 14px;
+    position: relative;
+}
+
+.glow-container {
+    position: absolute;
+    inset: calc(var(--container-offset) / -2);
+    width: calc(100% + var(--container-offset));
+    height: calc(100% + var(--container-offset));
+    opacity: 0;
+}
+
+.glow-blur, .glow-line {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    y: 4px;
+    x: 4px;
+    fill: transparent;
+    stroke: #09ecc2;
+    stroke-width: 3px;
+    stroke-dasharray: 20px 30px;
+}
+
+.glow-line {
+    stroke-width: 1px;
+    filter: blur(2px);
+}
+
+.glow-blur {
+    filter: blur(6px);
+}
+
+#btns #divider {
+    width: 100%;
+}
+
+.glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
+    stroke-dashoffset: -75px;
+    transition: stroke-dashoffset 1250ms;
+}
+
+.glow-effect:is(:hover, :focus) .glow-container {
+    animation: glow-visibility 1250ms;
+}
+
+@keyframes glow-visibility {
+    0%, 100% { opacity: 0; }
+    25%, 65% { opacity: 1; }
+}
+
+#opts {
+    justify-content: center;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'KHMenu';
+}
+
+#opts input[type="checkbox"] {
+    appearance: none;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    width: 0.5rem;
+    height: 0.5rem;
+    outline: 3px solid #4ea7d0;
+    outline-offset: 3px;
+    border-radius: 0.05rem;
+    transition: outline 0.22s;
+}
+
+#opts input[type="checkbox"]:is(:hover, :focus) {
+    outline: 3px solid #8ac5e0;
+}
+
+#opts input[type="checkbox"]:checked {
+    background-color: #4ea7d0;
+}
+
+#opts input[type="checkbox"][disabled="disabled"] {
+    filter: grayscale(66%) opacity(66%);
+}
+
+#opts label {
+    position: relative;
+    top: 1px;
+}
+
+#bingoboard {
+    order: 1;
+    max-width: 100%;
+    text-align: center;
+    font-size: 8px;
+    border-collapse: collapse;
+    flex-shrink: 0;
+}
+
+th {
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: 'KHData';
+}
+
+td {
+    position: relative;
+    width: 104px;
+    max-width: 104px;
+    height: 90px;
+    max-height: 104px;
+    box-sizing: border-box;
+    transition: background-color 0.66s;
+    overflow: hidden;
+    z-index: 4444;
+}
+
+.tdpadding {
+    position: relative;
+    max-height: 104px;
+    padding: 4px 2px;
+    word-break: break-word;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 4444;
+}
+
+#freespace span {
+    font-family: 'KHData';
+    font-size: 1.5em;
+    color: transparent;
+    background-image: linear-gradient(100deg, #d6dedf, #c0c9ca, #d6dedf, white);
+    background-clip: text;
+}
+
+.tile textarea {
+    resize: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 75%;
+}
+
+.unmarked:hover {
+    background-color: #7e96a180;
+}
+
+.marked {
+    background-color: #a20906a8;
+}
+
+.marked:hover {
+    background-color: #e10e05a8;
+}
+
+.tile .ripplecircle {
+    position: absolute;
+    height: 104px;
+    width: 104px;
+    inset: 0;
+    border-radius: 100%;
+    opacity: 0;
+    transition: background-color 0.66s;
+    z-index: 444;
+}
+
+.unmarked .ripplecircle {
+    background-color: #7e96a180;
+}
+
+.marked .ripplecircle {
+    background-color: #a20906a8;
+}
+
+.ripplecircle.animate {
+    animation: ripple 0.8s;
+}
+
+@keyframes ripple {
+    0% { opacity: 100%; transform: scale(0); }
+    100% { opacity: 0%; transform: scale(2.5); }
+}
+
+#side { order: 0; padding-bottom: 8px; }
+
+a#rightlink {
+    display: block;
+    text-align: right;
+    padding-right: 10vw;
+}
+
+@media screen and (min-width: 536px) {
+    
+    #bingoboard { font-size: 12px; }
+
+}
+
+@media screen and (min-width: 590px) {
+
+    #mobdisc { display: none; }
+
+    .lightdark {
+        right: 1vw;
+        width: 130px;
+    }
+
+    #lightdarktext {
+        display: inline;
+    }
+    
+}
+
+@media screen and (min-width: 862px) {
+
+    h1 {
+        font-family: 'KHTitle';
+        font-size: 1.75rem;
+        line-height: 2;
+    }
+
+    h1 span {
+        font-family: 'Fenton Ff';
+    }
+
+    /* h1 span {
+        margin: 0 -8rem;
+        display: inline-block;
+        font-family: 'KHMenu';
+        font-size: 1.25em;
+        line-height: 1.25;
+        transform: scaleX(0.33);
+        letter-spacing: 0.25em;
+    }
+
+    h1 span span {
+        margin: 0 1rem;
+        transform: scaleX(3);
+    } */
+
+    /* h1 span {
+        font-size: 125%;
+        vertical-align: top;
+        line-height: 1.5;
+    } */
+
+    .lightdark {
+        top: 0.75rem;
+    }
+    
+}
+
+
+/**** advanced appearance (desktop and higher resolutions) ****/
+
+@media screen and (min-width: 1030px) {
+
+    main {
+        flex-wrap: nowrap;
+        margin: 1.5vh 4vw 0 4vw;
+        padding: 0.5rem 1rem;
+    }
+
+    footer {
+        margin: 1.5vh 4vw 0 4vw;
+        padding: 0.5rem 1rem;
+    }
+
+    #bingoboard {
+        order: 0;
+    }
+
+    #side {
+        order: 1;
+    }
+
+}
+
+
+
+/**** highest resolution appearance ****/
+
+@media screen and (min-width: 1500px) {
+    
+    main {
+        margin: 1.5vh 6px 0 6vw;
+    }
+
+    footer {
+        margin: 1.5vh 6px 0 6vw;
+    }
+
+}
