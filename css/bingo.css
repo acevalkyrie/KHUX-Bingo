@@ -453,10 +453,12 @@ a#rightlink {
     
     main {
         margin: 1.5vh 6px 0 6vw;
+        max-width: 150ch;
     }
 
     footer {
         margin: 1.5vh 6px 0 6vw;
+        max-width: 150ch;
     }
 
 }
